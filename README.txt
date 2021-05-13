@@ -16,4 +16,4 @@ Inspired in "kikon agenda", a proyect developed in collaboration with Cristina Q
 
 Git proyect: https://github.com/CoderCris/kicon-agenda
 
-Using Firebase as database, module used: angular/fire
+Using Firebase as database, module used: AngularFireModule

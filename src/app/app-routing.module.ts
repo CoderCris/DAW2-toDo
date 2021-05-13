@@ -1,7 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-const routes: Routes = [];
+import { EventListComponent } from './event-list/event-list.component';
+import { EventCreationComponent } from './event-list/event-creation/event-creation.component';
+const routes: Routes = [
+  { path: '', redirectTo: 'event-list', pathMatch: 'full'},
+  { path: 'event-list', component: EventListComponent },
+  { path: 'event-creation', component: EventCreationComponent },
+  { path: '**', redirectTo: 'list-empleados', pathMatch: 'full'},
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

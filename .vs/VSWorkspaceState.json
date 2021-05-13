@@ -5,6 +5,6 @@
     "\\src\\app",
     "\\src\\app\\event-list"
   ],
-  "SelectedNode": "\\src\\app\\event-list\\event-list.component.ts",
+  "SelectedNode": "\\src\\app\\event-service.service.ts",
   "PreviewInSolutionExplorer": false
 }
