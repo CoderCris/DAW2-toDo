@@ -3,8 +3,8 @@
     "",
     "\\src",
     "\\src\\app",
-    "\\src\\app\\event-list"
+    "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\event-service.service.ts",
+  "SelectedNode": "\\src\\main.ts",
   "PreviewInSolutionExplorer": false
 }

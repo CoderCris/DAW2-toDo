@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "daw2-todo": {
+      "hosting": {
+        "DAW2-toDo": [
+          "daw2-todo"
+        ]
+      }
+    }
+  }
+}

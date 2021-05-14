@@ -24,13 +24,7 @@ export class EventListComponent implements OnInit {
   }
 
   addEvent() {
-    /*
-    this.eventService.addEvent('test').then(() => {
-      console.log("yiaiks");
-    }).catch(error => {
-      console.log('Error');
-    })
-    */
+
   }
 
   editEvent() {
