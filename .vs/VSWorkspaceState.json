@@ -3,8 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\event-list",
+    "\\src\\app\\event-list\\event-creation",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\main.ts",
+  "SelectedNode": "\\src\\app\\event-list\\event-creation\\event-creation.component.ts",
   "PreviewInSolutionExplorer": false
 }
