@@ -1,66 +1,68 @@
 <div>
-  <div>
-    <input type="text" name="name" placeholder="Event name" [(ngModel)]="event_name" />
-  </div>
-  <div>
-    <!-- FALTA DATE PICKER via Material-->
-  </div>
-  <div>
-    <label>Choose hour:</label>
-    <select [(ngModel)]="hour" required>
-      <option label="--select hour --"></option>
-      <option [ngValue]="0">{{"00"}}</option>
-      <option [ngValue]="1">{{"01"}}</option>
-      <option [ngValue]="2">{{"02"}}</option>
-      <option [ngValue]="3">{{"03"}}</option>
-      <option [ngValue]="4">{{"04"}}</option>
-      <option [ngValue]="5">{{"05"}}</option>
-      <option [ngValue]="6">{{"06"}}</option>
-      <option [ngValue]="7">{{"07"}}</option>
-      <option [ngValue]="8">{{"08"}}</option>
-      <option [ngValue]="9">{{"09"}}</option>
-      <option [ngValue]="10">{{"10"}}</option>
-      <option [ngValue]="11">{{"11"}}</option>
-      <option [ngValue]="12">{{"12"}}</option>
-      <option [ngValue]="13">{{"13"}}</option>
-      <option [ngValue]="14">{{"14"}}</option>
-      <option [ngValue]="15">{{"15"}}</option>
-      <option [ngValue]="16">{{"16"}}</option>
-      <option [ngValue]="17">{{"17"}}</option>
-      <option [ngValue]="18">{{"18"}}</option>
-      <option [ngValue]="19">{{"19"}}</option>
-      <option [ngValue]="20">{{"20"}}</option>
-      <option [ngValue]="21">{{"21"}}</option>
-      <option [ngValue]="22">{{"22"}}</option>
-      <option [ngValue]="23">{{"23"}}</option>
-    </select>
-  </div>
-  <div>
-    <label>Choose minutes:</label>
-    <select [(ngModel)]="minutes" required>
-      <option label="--select minutes --"></option>
-      <option [ngValue]="00">{{"00"}}</option>
-      <option [ngValue]="05">{{"05"}}</option>
-      <option [ngValue]="10">{{"10"}}</option>
-      <option [ngValue]="15">{{"15"}}</option>
-      <option [ngValue]="20">{{"20"}}</option>
-      <option [ngValue]="25">{{"25"}}</option>
-      <option [ngValue]="30">{{"30"}}</option>
-      <option [ngValue]="35">{{"35"}}</option>
-      <option [ngValue]="40">{{"40"}}</option>
-      <option [ngValue]="45">{{"45"}}</option>
-      <option [ngValue]="50">{{"50"}}</option>
-      <option [ngValue]="55">{{"55"}}</option>
-    </select>
-  </div>
-  <div>
+  <mat-card>
     <div>
-      <button (click)="addEvent()">Accept</button>
+      <input type="text" name="name" placeholder="Event name" [(ngModel)]="event_name" />
     </div>
     <div>
-      <button (click)="cancel()">Cancel</button>
+      <!-- FALTA DATE PICKER via Material-->
     </div>
-  </div>
+    <div>
+      <label>Choose hour:</label>
+      <select [(ngModel)]="hour" required>
+        <option label="--select hour --"></option>
+        <option [ngValue]="0">{{"00"}}</option>
+        <option [ngValue]="1">{{"01"}}</option>
+        <option [ngValue]="2">{{"02"}}</option>
+        <option [ngValue]="3">{{"03"}}</option>
+        <option [ngValue]="4">{{"04"}}</option>
+        <option [ngValue]="5">{{"05"}}</option>
+        <option [ngValue]="6">{{"06"}}</option>
+        <option [ngValue]="7">{{"07"}}</option>
+        <option [ngValue]="8">{{"08"}}</option>
+        <option [ngValue]="9">{{"09"}}</option>
+        <option [ngValue]="10">{{"10"}}</option>
+        <option [ngValue]="11">{{"11"}}</option>
+        <option [ngValue]="12">{{"12"}}</option>
+        <option [ngValue]="13">{{"13"}}</option>
+        <option [ngValue]="14">{{"14"}}</option>
+        <option [ngValue]="15">{{"15"}}</option>
+        <option [ngValue]="16">{{"16"}}</option>
+        <option [ngValue]="17">{{"17"}}</option>
+        <option [ngValue]="18">{{"18"}}</option>
+        <option [ngValue]="19">{{"19"}}</option>
+        <option [ngValue]="20">{{"20"}}</option>
+        <option [ngValue]="21">{{"21"}}</option>
+        <option [ngValue]="22">{{"22"}}</option>
+        <option [ngValue]="23">{{"23"}}</option>
+      </select>
+    </div>
+    <div>
+      <label>Choose minutes:</label>
+      <select [(ngModel)]="minutes" required>
+        <option label="--select minutes --"></option>
+        <option [ngValue]="00">{{"00"}}</option>
+        <option [ngValue]="05">{{"05"}}</option>
+        <option [ngValue]="10">{{"10"}}</option>
+        <option [ngValue]="15">{{"15"}}</option>
+        <option [ngValue]="20">{{"20"}}</option>
+        <option [ngValue]="25">{{"25"}}</option>
+        <option [ngValue]="30">{{"30"}}</option>
+        <option [ngValue]="35">{{"35"}}</option>
+        <option [ngValue]="40">{{"40"}}</option>
+        <option [ngValue]="45">{{"45"}}</option>
+        <option [ngValue]="50">{{"50"}}</option>
+        <option [ngValue]="55">{{"55"}}</option>
+      </select>
+    </div>
+    <div>
+      <div>
+        <button (click)="addEvent()">Accept</button>
+      </div>
+      <div>
+        <button (click)="cancel()">Cancel</button>
+      </div>
+    </div>
+  </mat-card>
 </div>
 
 <!--
