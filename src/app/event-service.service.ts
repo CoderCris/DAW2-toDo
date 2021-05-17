@@ -10,7 +10,7 @@ export class EventServiceService {
   constructor(private firestore: AngularFirestore) {
   }
 
-  addEvent(event: any) {
+  addEvent(event: any): Promise<any> {
     return this.firestore.collection('events').add(event);
   }
 
