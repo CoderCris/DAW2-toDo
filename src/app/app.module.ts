@@ -11,6 +11,9 @@ import { EventComponent } from './event-list/event/event.component';
 import { FormsModule } from '@angular/forms'; 
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 //Firebase
 import { AngularFireModule } from '@angular/fire';
@@ -24,6 +27,7 @@ import { NgModel } from '@angular/forms';
 
 //Angular Materials
 import { MatCardModule } from '@angular/material/card';
+//import { MatInputModule } from '@angular/material/input';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 /*
 
@@ -32,7 +36,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
 import { MatNativeDateModule } from '@angular/material/core';
-import { MatInputModule } from '@angular/material/input';
+
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatDividerModule } from '@angular/material/divider';
@@ -60,6 +64,7 @@ import { MatSelectModule } from '@angular/material/select';
     NoopAnimationsModule,
     FormsModule,
     MatCardModule,
+    ReactiveFormsModule,
     //MatFormFieldModule,
     //AngularFireModule.initializeApp(environment.firebase),
     //AngularFirestoreModule

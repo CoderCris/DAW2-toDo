@@ -1,7 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventServiceService } from 'src/app/event-service.service';
 import { error } from 'protractor';
+import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-event-creation',
@@ -11,7 +12,8 @@ import { error } from 'protractor';
 
 @Input('ngModel')
 
-export class EventCreationComponent implements OnInit {
+export class EventCreationComponent {
+  @ViewChild('f') eventForm: NgForm;
 
   event_create: any;
   event_name: string;
@@ -27,6 +29,11 @@ export class EventCreationComponent implements OnInit {
 
   }
 
+  onSubmit(form: NgForm) {
+    console.log(form);
+    console.log(this.eventForm);
+  }
+
   ngOnInit(): void {
   }
 
@@ -38,7 +45,13 @@ export class EventCreationComponent implements OnInit {
     }).catch(error => {
       console.log('error');
     })*/
-    console.log('Aguacate');
+    console.log(this.event_name);
+    console.log(this.minutes);
+    console.log(this.hour);
+  }
+
+  hasError() {
+    return null;
   }
 
   cancel() {
