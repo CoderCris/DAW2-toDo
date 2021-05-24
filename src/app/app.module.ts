@@ -27,7 +27,8 @@ import { NgModel } from '@angular/forms';
 
 //Angular Materials
 import { MatCardModule } from '@angular/material/card';
-//import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 /*
 
@@ -65,6 +66,8 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     MatCardModule,
     ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
     //MatFormFieldModule,
     //AngularFireModule.initializeApp(environment.firebase),
     //AngularFirestoreModule

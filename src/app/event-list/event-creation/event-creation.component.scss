@@ -1,3 +1,16 @@
+#event_div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #F5F5F5;
+  height: 100%;
+}
+
+form.event_form{
+  width: 100%;
+  max-width: 330px;
+  text-align:center;
+}
 input.ng-invalid.ng-touched{
     border: 1px solid red;
 }

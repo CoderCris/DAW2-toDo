@@ -1,12 +1,15 @@
-<div>
+<div id="event_div">
   <form name="event_form" (ngSubmit)="onSubmit(f)" #f="ngForm">
-    <input [(ngModel)]="event_name" id="name" type="text" name="event_name" placeholder="Nombre del evento" required minlength="3" />
-        <div>
-          <button type='submit' (click)="addEvent()" [disabled]="!f.valid">Accept</button>
-        </div>
-        <div>
-          <button (click)="cancel()">Cancel</button>
-        </div>
+    <mat-form-field appearance="fill">
+      <mat-label>Event name</mat-label>
+      <input [(ngModel)]="event_name" id="name" type="text" name="event_name" required minlength="3" matInput/>
+    </mat-form-field>
+      <div>
+        <button type='submit' (click)="addEvent()" [disabled]="!f.valid">Accept</button>
+      </div>
+      <div>
+        <button (click)="cancel()">Cancel</button>
+      </div>
   </form>
 </div>
 
