@@ -12,11 +12,12 @@ import { EventServiceService } from '../event-service.service';
 })
 export class EventListComponent implements OnInit {
 
- // public events: Observable<any[]>;
+  events: Observable<any[]>;
 
-  constructor(/*private eventService: EventServiceService*/){
+  constructor(firestore: AngularFirestore/*private eventService: EventServiceService*/){
 
     //this.events = firestore.collection('events').valueChanges({ idField: 'eventId' });
+    this.events = firestore.collection('events').valueChanges();
 
   }
 

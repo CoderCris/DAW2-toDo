@@ -69,8 +69,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     //MatFormFieldModule,
-    //AngularFireModule.initializeApp(environment.firebase),
-    //AngularFirestoreModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
   ],
   providers: [EventServiceService],
   bootstrap: [AppComponent]

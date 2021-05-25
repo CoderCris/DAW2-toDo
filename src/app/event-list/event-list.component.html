@@ -2,5 +2,9 @@
 <div id="'event_list_box">
 
   <button id="add_event" routerLink="/event-creation">ADD</button>
-
+  <ul>
+    <li class="text" *ngFor="let event of events| async">
+      {{event.name}}
+    </li>
+  </ul>
 </div>
