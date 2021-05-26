@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, ViewChild } from '@angular/core';
+ import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { EventServiceService } from 'src/app/event-service.service';
 import { error } from 'protractor';
@@ -12,6 +12,7 @@ import { FormControl, FormGroup, Validators, NgForm } from '@angular/forms';
 
 @Input('ngModel')
 
+
 export class EventCreationComponent {
   @ViewChild('f') eventForm: NgForm;
 
@@ -23,9 +24,7 @@ export class EventCreationComponent {
 
   submited: false;
 
-  constructor(/*private _eventService: EventServiceService*/ private router: Router) {
-
-    this.event_create = 'testo';
+  constructor(private _eventService: EventServiceService, private router: Router) {
 
   }
 
@@ -39,15 +38,11 @@ export class EventCreationComponent {
 
   addEvent() {
 
-
-   /* this._eventService.addEvent('test').then(() => {
-      console.log('good');
-    }).catch(error => {
-      console.log('error');
-    })*/
-    console.log(this.event_name);
-    console.log(this.minutes);
-    console.log(this.hour);
+    this.event_create = {
+      name: this.event_name,
+    }
+    this._eventService.addEvent(this.event_create);
+    this.router.navigate(['']); 
   }
 
   hasError() {

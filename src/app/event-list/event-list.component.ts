@@ -14,10 +14,10 @@ export class EventListComponent implements OnInit {
 
   events: Observable<any[]>;
 
-  constructor(firestore: AngularFirestore/*private eventService: EventServiceService*/){
+  constructor(firestore: AngularFirestore, private _eventService: EventServiceService){
 
     //this.events = firestore.collection('events').valueChanges({ idField: 'eventId' });
-    this.events = firestore.collection('events').valueChanges();
+    this.events = this._eventService.getEvents();
 
   }
 
@@ -32,11 +32,20 @@ export class EventListComponent implements OnInit {
 
   }
 
-  deleteEvent() {
+  deleteEvent(eventId) {
 
+    this._eventService.deleteEvents(eventId);
+    console.log(eventId); 
+    /*firestore.collection('events').doc(id_event).delete().then(function () {
+      console.log('Evento eliminado');
+    }).catch(function (error) {
+      console.log('ERROR: algo falló en la eliminación');
+    });*/
   }
 
   cleanList() {
+
+
 
   }
 

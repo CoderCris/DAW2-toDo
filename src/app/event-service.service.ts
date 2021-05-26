@@ -10,8 +10,16 @@ export class EventServiceService {
   constructor(private firestore: AngularFirestore) {
   }
 
-  addEvent(event: any): Promise<any> {
+  getEvents() {
+    return this.firestore.collection('events').valueChanges({idField: 'eventId'});
+  }
+
+  addEvent(event: string): Promise<any> {
     return this.firestore.collection('events').add(event);
+  }
+
+  deleteEvents(eventId) {
+    this.firestore.collection('events').doc(eventId).delete();
   }
 
 }

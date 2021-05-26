@@ -9,6 +9,6 @@
     "\\src\\app\\event-list\\event-edit",
     "\\src\\environments"
   ],
-  "SelectedNode": "\\src\\app\\app.module.ts",
+  "SelectedNode": "\\src\\app\\event-list\\event-creation\\event-creation.component.ts",
   "PreviewInSolutionExplorer": false
 }
