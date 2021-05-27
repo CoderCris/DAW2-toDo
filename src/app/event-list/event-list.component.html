@@ -1,11 +1,18 @@
 <h1>TODO container</h1>
-<div id="'event_list_box">
-
-  <button id="add_event" routerLink="/event-creation">ADD</button>
+<div id="event_list_box">
+  <div>
+    <button id="add_event" routerLink="/event-creation">ADD</button>
+    <label>Order by </label>
+    <select id="order_select">hola</select>
+  </div>
   <div class="text" *ngFor="let event of events| async">
     <mat-card>
       <div id="event_name">{{event.name}}</div>
-      <button (click)="deleteEvent(event.eventId)">DELETE</button>
+      <div class="button_container">
+        <button id="delete_button" (click)="deleteEvent(event.eventId)">DELETE</button>
+        <button >EDIT</button>
+        <label id="state">STATE</label>
+      </div>
     </mat-card>
   </div>
 </div>
