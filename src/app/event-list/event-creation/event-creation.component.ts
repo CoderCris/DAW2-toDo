@@ -18,11 +18,7 @@ export class EventCreationComponent {
 
   event_create: any;
   event_name: string;
-  date: string;
-  hour: string;
-  minutes: string;
-
-  submited: false;
+  //event_state: string;
 
   constructor(private _eventService: EventServiceService, private router: Router) {
 
@@ -38,8 +34,10 @@ export class EventCreationComponent {
 
   addEvent() {
 
+
     this.event_create = {
       name: this.event_name,
+      state: "Queued",
     }
     this._eventService.addEvent(this.event_create);
     this.router.navigate(['']); 
