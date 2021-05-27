@@ -15,7 +15,7 @@ export class EventListComponent implements OnInit {
   events: Observable<any[]>;
 
   constructor(firestore: AngularFirestore, private _eventService: EventServiceService){
-    this.events = this._eventService.getEvents();
+    this.events = this._eventService.getListedEvents();
   }
 
   ngOnInit(): void {
@@ -34,7 +34,7 @@ export class EventListComponent implements OnInit {
 
   }
 
-  storeEvent() {
-
+  archiveEvent(eventId) {
+    this._eventService.changeEventList(eventId);
   }
 }

@@ -1,6 +1,5 @@
-<div id="event_list_box">
+<div id="archive_box">
   <div>
-    <button id="add_event" routerLink="/event-creation">ADD</button>
     <label>Order by </label>
     <select id="order_select">hola</select>
   </div>
@@ -9,8 +8,7 @@
       <div id="event_name">{{event.name}}</div>
       <div class="button_container">
         <button id="delete_button" (click)="deleteEvent(event.eventId)">DELETE</button>
-        <button>EDIT</button>
-        <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
+        <button id="restore_button" (click)="restoreEvent(event.eventId)">Unarchive</button>
         <label id="state">{{event.state}}</label>
       </div>
     </mat-card>

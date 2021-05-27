@@ -25,8 +25,6 @@ export class EventCreationComponent {
   }
 
   onSubmit(form: NgForm) {
-    console.log(form);
-    console.log(this.eventForm);
   }
 
   ngOnInit(): void {
@@ -38,6 +36,7 @@ export class EventCreationComponent {
     this.event_create = {
       name: this.event_name,
       state: "Queued",
+      listed: true,
     }
     this._eventService.addEvent(this.event_create);
     this.router.navigate(['']); 
