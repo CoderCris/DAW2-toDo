@@ -2,9 +2,12 @@
   <div>
     <label>Order by </label>
     <select id="order_select" (change)="setOrderList();">
-      <option value="state">State</option>
-      <option value="name">Name</option>
-      <option value="date">Date</option>
+      <option value="state-asc">State ascendant</option>
+      <option value="state-desc">State descendant</option>
+      <option value="name-asc">Name ascendant</option>
+      <option value="name-desc">Name descendant</option>
+      <option value="date-asc">Date ascendant</option>
+      <option value="date-desc">Date descendant</option>
     </select>
   </div>
   <div id="events_pool" class="text" *ngFor="let event of events| async">

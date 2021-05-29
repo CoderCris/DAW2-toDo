@@ -10,8 +10,8 @@ export class EventServiceService {
   constructor(private firestore: AngularFirestore) {
   }
 
-  getEvents(order: string, listed: boolean) {
-    return this.firestore.collection('events', ref => ref.where('listed', '==', listed).orderBy(order, 'asc')).valueChanges({idField: 'eventId'});
+  getEvents(listed: boolean, order: string, orientation: any) {
+    return this.firestore.collection('events', ref => ref.where('listed', '==', listed).orderBy(order, orientation)).valueChanges({idField: 'eventId'});
   }
 
   addEvent(event: string): Promise<any> {

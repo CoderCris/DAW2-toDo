@@ -11,10 +11,12 @@ export class ArchiveComponent implements OnInit {
 
   events: Observable<any[]>;
   order: string;
+  orientation: string;
 
   constructor(private _eventService: EventServiceService) {
     this.order = "state";
-    this.events = this._eventService.getEvents(this.order, false);
+    this.orientation = "asc"
+    this.events = this._eventService.getEvents(false, this.order, this.orientation);
   }
 
   ngOnInit(): void {
@@ -29,8 +31,8 @@ export class ArchiveComponent implements OnInit {
   }
 
   setOrderList() {
-    this.order = (<HTMLInputElement>document.getElementById("order_select")).value;
-    this.events = this._eventService.getEvents(this.order, false);
+    [this.order, this.orientation]= (<HTMLInputElement>document.getElementById("order_select")).value.split('-');
+    this.events = this._eventService.getEvents(false, this.order, this.orientation);
     console.log(this.order);
     return null;
   }
@@ -41,7 +43,7 @@ export class ArchiveComponent implements OnInit {
         return '#e6e307';
       case 'working':
         return 'green';
-      case 'terminated':
+      case 'finished':
         return 'red';
     }
   }

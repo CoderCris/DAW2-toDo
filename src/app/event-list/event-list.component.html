@@ -1,11 +1,16 @@
 <div id="event_list_box">
   <div>
-    <button id="add_event" routerLink="/event-creation">ADD</button>
+    <!--<button id="add_event" routerLink="/event-creation">ADD</button>-->
+    <button id="add_event" (click)="dialogAdd()">ADD</button>
+
     <label>Order by </label>
     <select id="order_select" (change)="setOrderList();">
-      <option value="state">State</option>
-      <option value="name">Name</option>
-      <option value="date">Date</option>
+      <option value="state-asc">State ascendant</option>
+      <option value="state-desc">State descendant</option>
+      <option value="name-asc">Name ascendant</option>
+      <option value="name-desc">Name descendant</option>
+      <option value="date-asc">Date ascendant</option>
+      <option value="date-desc">Date descendant</option>
     </select>
   </div>
   <div class="text" *ngFor="let event of events| async">
@@ -19,7 +24,7 @@
         <div id="state_buttons">
           <button (click)="setEventState(event.eventId, 'queued')">queued</button>
           <button (click)="setEventState(event.eventId, 'working')">working</button>
-          <button (click)="setEventState(event.eventId, 'terminated')">terminated</button>
+          <button (click)="setEventState(event.eventId, 'finished')">finished</button>
         </div>
       </div>
     </mat-card>
