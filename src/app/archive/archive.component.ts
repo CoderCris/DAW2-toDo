@@ -25,7 +25,7 @@ export class ArchiveComponent implements OnInit {
   }
 
   restoreEvent(eventId) {
-    this._eventService.changeEventList(eventId);
+    this._eventService.changeEventList(eventId, false);
   }
 
   setOrderList() {
@@ -33,5 +33,16 @@ export class ArchiveComponent implements OnInit {
     this.events = this._eventService.getEvents(this.order, false);
     console.log(this.order);
     return null;
+  }
+
+  getColor(state) {
+    switch (state) {
+      case 'queued':
+        return '#e6e307';
+      case 'working':
+        return 'green';
+      case 'terminated':
+        return 'red';
+    }
   }
 }

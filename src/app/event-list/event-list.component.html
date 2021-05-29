@@ -15,7 +15,12 @@
         <button id="delete_button" (click)="deleteEvent(event.eventId)">DELETE</button>
         <button>EDIT</button>
         <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
-        <label id="state">{{event.state}}</label>
+        <label id="state" [ngStyle]="{'color':getColor(event.state)}">{{event.state}}</label>
+        <div id="state_buttons">
+          <button (click)="setEventState(event.eventId, 'queued')">queued</button>
+          <button (click)="setEventState(event.eventId, 'working')">working</button>
+          <button (click)="setEventState(event.eventId, 'terminated')">terminated</button>
+        </div>
       </div>
     </mat-card>
   </div>

@@ -22,9 +22,21 @@ export class EventServiceService {
     this.firestore.collection('events').doc(eventId).delete();
   }
  
-  changeEventList(eventId) {
+  changeEventList(eventId: any,listed: boolean) {
+    if (listed) {
+      this.firestore.collection('events').doc(eventId).update({
+        listed: false,
+      })
+    } else {
+      this.firestore.collection('events').doc(eventId).update({
+        listed: true,
+      })
+    }
+  }
+
+  changeEventState(eventId, newState) {
     this.firestore.collection('events').doc(eventId).update({
-      listed: !this.firestore.collection('events').doc(eventId).valueChanges({idField: 'listed'}), 
+      state: newState,
     })
   }
 

@@ -34,7 +34,7 @@ export class EventCreationComponent {
 
     this.event_create = {
       name: this.event_name,
-      state: "Queued",
+      state: "queued",
       listed: true,
       date: new Date(),
     }

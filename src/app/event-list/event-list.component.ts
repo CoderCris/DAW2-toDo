@@ -31,9 +31,10 @@ export class EventListComponent implements OnInit {
     this._eventService.deleteEvents(eventId);
   }
 
-  changeEventState(eventId){
-    //this._eventService.changeEventState(eventId);
-
+  setEventState(eventId, state) {
+    //console.log((<HTMLInputElement>document.getElementById("state_select")).value);
+    //this._eventService.changeEventState(eventId, (<HTMLInputElement>document.getElementById("state_select")).value);
+    this._eventService.changeEventState(eventId, state); 
   }
 
 
@@ -43,6 +44,17 @@ export class EventListComponent implements OnInit {
   }
 
   archiveEvent(eventId) {
-    this._eventService.changeEventList(eventId);
+    this._eventService.changeEventList(eventId, true);
+  }
+
+  getColor(state) {
+    switch (state) {
+      case 'queued':
+        return '#e6e307';
+      case 'working':
+        return 'green';
+      case 'terminated':
+        return 'red';
+    }
   }
 }
