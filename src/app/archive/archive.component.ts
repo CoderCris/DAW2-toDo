@@ -10,9 +10,11 @@ import { Observable } from 'rxjs';
 export class ArchiveComponent implements OnInit {
 
   events: Observable<any[]>;
+  order: string;
 
   constructor(private _eventService: EventServiceService) {
-    this.events = this._eventService.getArchivedEvents();
+    this.order = "state";
+    this.events = this._eventService.getEvents(this.order, false);
   }
 
   ngOnInit(): void {
@@ -26,4 +28,10 @@ export class ArchiveComponent implements OnInit {
     this._eventService.changeEventList(eventId);
   }
 
+  setOrderList() {
+    this.order = (<HTMLInputElement>document.getElementById("order_select")).value;
+    this.events = this._eventService.getEvents(this.order, false);
+    console.log(this.order);
+    return null;
+  }
 }

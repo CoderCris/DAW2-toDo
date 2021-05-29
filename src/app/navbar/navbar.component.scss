@@ -1,3 +1,28 @@
 a{
-  margin: 3em ; 
+  margin: 3em ;
+  text-decoration: none;
+  color: inherit;
+}
+
+#navbar {
+  width: auto;
+  background-color: #b7ff76;
+  padding: 5em;
+  align-self:center;
+  align-items: center;
+}
+
+#titte{
+  padding: 2em;
+  margin: 2em;
+}
+#menus a{
+
+  padding: 2em;
+  text-align: center;
+  
+}
+
+#menus a:hover {
+  background-color: #fafafa;
 }

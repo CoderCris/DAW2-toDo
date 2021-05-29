@@ -3,9 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\archive",
     "\\src\\app\\event-list",
-    "\\src\\app\\navbar"
+    "\\src\\app\\event-list\\event-creation"
   ],
-  "SelectedNode": "\\src\\app\\navbar\\navbar.component.scss",
+  "SelectedNode": "\\src\\app\\event-service.service.ts",
   "PreviewInSolutionExplorer": false
 }

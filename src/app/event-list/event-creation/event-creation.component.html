@@ -5,7 +5,7 @@
       <input [(ngModel)]="event_name" id="name" type="text" name="event_name" required minlength="3" matInput/>
     </mat-form-field>
       <div>
-        <button type='submit' (click)="addEvent()" [disabled]="!f.valid">Accept</button>
+        <button (click)="addEvent()" [disabled]="!f.valid">Accept</button>
       </div>
       <div>
         <button (click)="cancel()">Cancel</button>

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+  import { Component, OnInit } from '@angular/core';
 
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
@@ -13,9 +13,11 @@ import { EventServiceService } from '../event-service.service';
 export class EventListComponent implements OnInit {
 
   events: Observable<any[]>;
+  order: string;
 
   constructor(firestore: AngularFirestore, private _eventService: EventServiceService){
-    this.events = this._eventService.getListedEvents();
+    this.order = "name";
+    this.events = this._eventService.getEvents(this.order, true);
   }
 
   ngOnInit(): void {
@@ -29,9 +31,15 @@ export class EventListComponent implements OnInit {
     this._eventService.deleteEvents(eventId);
   }
 
+  changeEventState(eventId){
+    //this._eventService.changeEventState(eventId);
+
+  }
+
 
   setOrderList() {
-
+    this.order = (<HTMLInputElement>document.getElementById("order_select")).value;
+    this.events = this._eventService.getEvents(this.order, true);
   }
 
   archiveEvent(eventId) {

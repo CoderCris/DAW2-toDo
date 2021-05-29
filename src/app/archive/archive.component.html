@@ -1,9 +1,13 @@
 <div id="archive_box">
   <div>
     <label>Order by </label>
-    <select id="order_select">hola</select>
+    <select id="order_select" (change)="setOrderList();">
+      <option value="state">State</option>
+      <option value="name">Name</option>
+      <option value="date">Date</option>
+    </select>
   </div>
-  <div class="text" *ngFor="let event of events| async">
+  <div id="events_pool" class="text" *ngFor="let event of events| async">
     <mat-card>
       <div id="event_name">{{event.name}}</div>
       <div class="button_container">

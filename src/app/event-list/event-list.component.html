@@ -2,7 +2,11 @@
   <div>
     <button id="add_event" routerLink="/event-creation">ADD</button>
     <label>Order by </label>
-    <select id="order_select">hola</select>
+    <select id="order_select" (change)="setOrderList();">
+      <option value="state">State</option>
+      <option value="name">Name</option>
+      <option value="date">Date</option>
+    </select>
   </div>
   <div class="text" *ngFor="let event of events| async">
     <mat-card>
