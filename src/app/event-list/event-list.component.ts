@@ -4,8 +4,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { EventServiceService } from '../event-service.service';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { EventCreationComponent } from './event-creation/event-creation.component';
+import { EventEditComponent } from './event-edit/event-edit.component';
 
 @Component({
   selector: 'app-event-list',
@@ -18,7 +19,7 @@ export class EventListComponent implements OnInit {
   order: string;
   orientation: string;
 
-  constructor(firestore: AngularFirestore, private _eventService: EventServiceService, private dialog: MatDialog){
+  constructor(private _eventService: EventServiceService, private dialog: MatDialog){
     this.order = "state";
     this.orientation = "asc";
     this.events = this._eventService.getEvents(true, this.order, this.orientation);
@@ -44,8 +45,6 @@ export class EventListComponent implements OnInit {
 
   setOrderList() {
     [this.order, this.orientation] = (<HTMLInputElement>document.getElementById("order_select")).value.split('-');
-    console.log(this.order);
-    console.log(this.orientation);
     this.events = this._eventService.getEvents(true, this.order, this.orientation);
   }
 
@@ -66,5 +65,9 @@ export class EventListComponent implements OnInit {
 
   dialogAdd() {
     this.dialog.open(EventCreationComponent);
+  }
+
+  dialogModify(eventId) {
+    this.dialog.open(EventEditComponent, {data: eventId});
   }
 }

@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EventServiceService } from 'src/app/event-service.service';
+import { Observable } from 'rxjs';
+import { EventListComponent } from '../event-list.component';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-event-edit',
@@ -7,9 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventEditComponent implements OnInit {
 
-  constructor() { }
+  event_name: string;
+
+  constructor(private _eventService: EventServiceService,
+    public dialogRef: MatDialogRef<EventEditComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: EventListComponent) {
+  }
+
+  onSubmit(form: NgForm) {
+  }
 
   ngOnInit(): void {
+
+  }
+
+  editEvent() {
+    this._eventService.changeEventName(this.data.toString(), this.event_name)
+    this.dialogRef.close();
+  }
+
+  cancel() {
+    this.dialogRef.close();
+
   }
 
 }

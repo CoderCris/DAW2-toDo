@@ -18,7 +18,7 @@
       <div id="event_name">{{event.name}}</div>
       <div class="button_container">
         <button id="delete_button" (click)="deleteEvent(event.eventId)">DELETE</button>
-        <button>EDIT</button>
+        <button id="edit_button" (click)="dialogModify(event.eventId)">EDIT</button>
         <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
         <label id="state" [ngStyle]="{'color':getColor(event.state)}">{{event.state}}</label>
         <div id="state_buttons">

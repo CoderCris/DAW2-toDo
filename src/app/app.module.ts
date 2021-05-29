@@ -12,6 +12,8 @@ import { FormsModule } from '@angular/forms';
 import { NoopAnimationsModule, BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { ReactiveFormsModule } from '@angular/forms';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ArchiveComponent } from './archive/archive.component';
 
 
 
@@ -29,8 +31,7 @@ import { NgModel } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { NavbarComponent } from './navbar/navbar.component';
-import { ArchiveComponent } from './archive/archive.component';
+import { MatDialogModule } from '@angular/material/dialog';
 //import { MatFormFieldModule } from '@angular/material/form-field';
 /*
 
@@ -72,11 +73,15 @@ import { MatSelectModule } from '@angular/material/select';
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
     //MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
   ],
   providers: [EventServiceService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [
+    EventCreationComponent,
+    EventEditComponent]
 })
 export class AppModule { }
