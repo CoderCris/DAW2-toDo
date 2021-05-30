@@ -1,17 +1,31 @@
-<h1>TODO container</h1>
 <div id="event_list_box">
   <div>
-    <button id="add_event" routerLink="/event-creation">ADD</button>
+    <!--<button id="add_event" routerLink="/event-creation">ADD</button>-->
+    <button id="add_event" (click)="dialogAdd()">ADD</button>
+
     <label>Order by </label>
-    <select id="order_select">hola</select>
+    <select id="order_select" (change)="setOrderList();">
+      <option value="state-asc">State ascendant</option>
+      <option value="state-desc">State descendant</option>
+      <option value="name-asc">Name ascendant</option>
+      <option value="name-desc">Name descendant</option>
+      <option value="date-asc">Date ascendant</option>
+      <option value="date-desc">Date descendant</option>
+    </select>
   </div>
   <div class="text" *ngFor="let event of events| async">
     <mat-card>
       <div id="event_name">{{event.name}}</div>
       <div class="button_container">
         <button id="delete_button" (click)="deleteEvent(event.eventId)">DELETE</button>
-        <button >EDIT</button>
-        <label id="state">STATE</label>
+        <button id="edit_button" (click)="dialogModify(event.eventId)">EDIT</button>
+        <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
+        <label id="state" [ngStyle]="{'color':getColor(event.state)}">{{event.state}}</label>
+        <div id="state_buttons">
+          <button (click)="setEventState(event.eventId, 'queued')">queued</button>
+          <button (click)="setEventState(event.eventId, 'working')">working</button>
+          <button (click)="setEventState(event.eventId, 'finished')">finished</button>
+        </div>
       </div>
     </mat-card>
   </div>
