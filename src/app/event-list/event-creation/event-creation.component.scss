@@ -10,6 +10,31 @@ form.event_form{
   max-width: 330px;
   text-align:center;
 }
+
 input.ng-invalid.ng-touched{
     border: 1px solid red;
+}
+
+#button-container{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#cancel_button {
+  height: 2em;
+  border: none;
+  margin-right: 1em;
+}
+
+#accept_button {
+  padding: .8em;
+  background-color: #44CA1A;
+  color: white;
+  border-radius: 4px;
+  border: none;
+}
+
+#accept_button:hover {
+  background-color: #b7ff76;
 }
