@@ -21,6 +21,7 @@
         <button id="edit_button" (click)="dialogModify(event.eventId)">EDIT</button>
         <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
         <label id="state" [ngStyle]="{'color':getColor(event.state)}">{{event.state}}</label>
+
       </div>
       <div id="state_buttons">
         <button id="queued" (click)="setEventState(event.eventId, 'queued')">QUEUED</button>

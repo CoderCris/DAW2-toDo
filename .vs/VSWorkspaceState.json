@@ -3,11 +3,10 @@
     "",
     "\\src",
     "\\src\\app",
+    "\\src\\app\\archive",
     "\\src\\app\\event-list",
-    "\\src\\app\\event-list\\event",
     "\\src\\app\\event-list\\event-creation",
-    "\\src\\app\\event-list\\event-edit",
-    "\\src\\environments"
+    "\\src\\app\\event-list\\event-edit"
   ],
   "SelectedNode": "\\src\\app\\event-list\\event-creation\\event-creation.component.ts",
   "PreviewInSolutionExplorer": false
