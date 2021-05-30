@@ -4,11 +4,9 @@
       <mat-label>Event name</mat-label>
       <input [(ngModel)]="event_name" id="name" type="text" name="event_name" autofocus minlength="3" matInput />
     </mat-form-field>
-    <div>
-      <button (click)="editEvent()" [disabled]="!f.valid">Accept</button>
-    </div>
-    <div>
-      <button (click)="cancel()">Cancel</button>
+    <div id="button-container">
+      <button id="cancel_button" (click)="cancel()">Cancel</button>
+      <button id="accept_button" (click)="editEvent()" [disabled]="!f.valid">Accept</button>
     </div>
   </form>
 </div>

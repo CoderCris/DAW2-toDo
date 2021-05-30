@@ -21,11 +21,11 @@
         <button id="edit_button" (click)="dialogModify(event.eventId)">EDIT</button>
         <button id="archive_button" (click)="archiveEvent(event.eventId)">ARCHIVE</button>
         <label id="state" [ngStyle]="{'color':getColor(event.state)}">{{event.state}}</label>
-        <div id="state_buttons">
-          <button (click)="setEventState(event.eventId, 'queued')">queued</button>
-          <button (click)="setEventState(event.eventId, 'working')">working</button>
-          <button (click)="setEventState(event.eventId, 'finished')">finished</button>
-        </div>
+      </div>
+      <div id="state_buttons">
+        <button id="queued" (click)="setEventState(event.eventId, 'queued')">QUEUED</button>
+        <button id="working" (click)="setEventState(event.eventId, 'working')">WORKING</button>
+        <button id="finished" (click)="setEventState(event.eventId, 'finished')">FINISHED</button>
       </div>
     </mat-card>
   </div>

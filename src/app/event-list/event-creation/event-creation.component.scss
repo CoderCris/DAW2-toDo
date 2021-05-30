@@ -21,13 +21,13 @@ input.ng-invalid.ng-touched{
   align-items: center;
 }
 
-#cancel-button {
+#cancel_button {
   height: 2em;
   border: none;
   margin-right: 1em;
 }
 
-#accept-button {
+#accept_button {
   padding: .8em;
   background-color: #44CA1A;
   color: white;
@@ -35,6 +35,6 @@ input.ng-invalid.ng-touched{
   border: none;
 }
 
-#accept-button:hover {
+#accept_button:hover {
   background-color: #b7ff76;
 }

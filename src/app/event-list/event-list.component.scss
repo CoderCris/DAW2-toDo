@@ -2,7 +2,6 @@
   width: 100%;
   min-width: min-content;
   margin-top: 6em;
-
 }
 
 #add_event{
@@ -15,7 +14,9 @@
 }
 
 mat-card {
+  display: flex;
  margin-top: 1em;
+ flex-direction: row;
 }
 
 #event_name {
@@ -44,4 +45,28 @@ button {
 
 label {
   font-weight: bold;
+}
+
+#state_buttons {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1em;
+  justify-content: space-between;
+}
+
+#state_buttons button{
+  padding: 4px;
+  margin: 1px;
+}
+
+#queued {
+  background-color: #EDA535;
+}
+
+#working {
+  background-color: #F6F91E;
+}
+
+#finished {
+  background-color: #53F91E;
 }
