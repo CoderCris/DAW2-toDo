@@ -17,3 +17,10 @@ Inspired in "kikon agenda", a proyect developed in collaboration with Cristina Q
 Git proyect: https://github.com/CoderCris/kicon-agenda
 
 Using Firebase as database, module used: AngularFireModule
+
+To run it locally, download the code, change the DB connection info and run:
+
+	# npm i
+
+	# ng serve
+
