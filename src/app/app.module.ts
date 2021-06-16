@@ -23,6 +23,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { EventCreationComponent } from './event-list/event-creation/event-creation.component';
 import { EventEditComponent } from './event-list/event-edit/event-edit.component';
 import { environment } from '../environments/environment';
+//import { environment } from '../environments/environment.prod';
 import { EventServiceService } from './event-service.service';
 import { NgModel } from '@angular/forms';
 
@@ -32,22 +33,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
-//import { MatFormFieldModule } from '@angular/material/form-field';
-/*
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-
-import { MatNativeDateModule } from '@angular/material/core';
-
-
-import { MatButtonModule } from '@angular/material/button';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSelectModule } from '@angular/material/select';
-*/
 
 
 
@@ -60,9 +46,6 @@ import { MatSelectModule } from '@angular/material/select';
     EventEditComponent,
     NavbarComponent,
     ArchiveComponent,
-    //NgModel,
-    /*AngularFireModule,
-    AngularFirestoreModule*/
   ],
   imports: [
     BrowserModule,
@@ -74,9 +57,9 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     MatInputModule,
     MatDialogModule,
-    //MatFormFieldModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    
   ],
   providers: [EventServiceService],
   bootstrap: [AppComponent],

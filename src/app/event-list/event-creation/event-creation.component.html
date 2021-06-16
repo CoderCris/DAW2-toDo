@@ -1,13 +1,14 @@
 <div id="event_div">
-  <form name="event_form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form name="event_form">
+    <!--(ngSubmit)="onSubmit(f)" #f="ngForm" --- [disabled]="!f.valid" -->
     <mat-form-field appearance="fill">
       <mat-label>Event name</mat-label>
-      <input [(ngModel)]="event_name" id="name" type="text" name="event_name" autofocus minlength="3" matInput/>
+      <input [(ngModel)]="event_name" id="name" type="text" name="event_name" autofocus minlength="3" matInput />
     </mat-form-field>
-      <div id="button-container">
-        <button id="cancel_button" (click)="cancel()">Cancel</button>
-        <button id="accept_button" (click)="addEvent()" [disabled]="!f.valid">Accept</button>
-      </div>
+    <div id="button-container">
+      <button id="cancel_button" (click)="cancel()">Cancel</button>
+      <button id="accept_button" type="submit" (click)="addEvent()">Accept</button>
+    </div>
   </form>
 </div>
 

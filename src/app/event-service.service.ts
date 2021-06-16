@@ -9,23 +9,31 @@ export class EventServiceService {
 
   constructor(private firestore: AngularFirestore) {
   }
-
-
-
-  updateEvent(eventId, name) {
-    this.firestore
-  }
-
+   
   getEvents(listed: boolean, order: string, orientation: any) {
-    return this.firestore.collection('events', ref => ref.where('listed', '==', listed).orderBy(order, orientation)).valueChanges({idField: 'eventId'});
+    return this.firestore.collection('events', ref => ref.where('listed', '==', listed)
+      .orderBy(order, orientation))
+      .valueChanges({ idField: 'eventId' });
   }
 
   getEvent(eventId) {
-    return this.firestore.collection('events').doc(eventId).valueChanges();
+    return this.firestore.collection('events')
+      .doc(eventId)
+      .valueChanges();
   }
 
-  addEvent(event: string): Promise<any> {
-    return this.firestore.collection('events').add(event);
+  addEvent(event: any){
+    this.firestore.collection('events').add({
+      name: "tuputamadre"
+    })
+      .then(function (docRef) {
+        console.log("Document written with ID: ", docRef);
+      })
+      .catch(function (error) {
+        console.error("Error adding document: ", error);
+      });
+
+    console.log('h');
   }
 
   deleteEvents(eventId) {
@@ -55,6 +63,13 @@ export class EventServiceService {
       name: newName,
     })
 
+  }
+
+  TEST() {
+    this.firestore.collection('test').add({
+      name: "name",
+    });
+    console.log("aguacate");
   }
 
 }

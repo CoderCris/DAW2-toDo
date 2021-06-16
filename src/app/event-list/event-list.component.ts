@@ -1,7 +1,5 @@
-  import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore, AngularFirestoreModule } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { EventServiceService } from '../event-service.service';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
@@ -28,17 +26,11 @@ export class EventListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  editEvent() {
-
-  }
-
   deleteEvent(eventId) {
     this._eventService.deleteEvents(eventId);
   }
 
   setEventState(eventId, state) {
-    //console.log((<HTMLInputElement>document.getElementById("state_select")).value);
-    //this._eventService.changeEventState(eventId, (<HTMLInputElement>document.getElementById("state_select")).value);
     this._eventService.changeEventState(eventId, state); 
   }
 
@@ -69,5 +61,9 @@ export class EventListComponent implements OnInit {
 
   dialogModify(eventId) {
     this.dialog.open(EventEditComponent, {data: eventId});
+  }
+
+  TEST() {
+    this._eventService.TEST();
   }
 }

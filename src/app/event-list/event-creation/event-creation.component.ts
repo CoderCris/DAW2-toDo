@@ -16,7 +16,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 
 
 export class EventCreationComponent {
-  @ViewChild('f') eventForm: NgForm;
+  //@ViewChild('f') eventForm: NgForm;
 
   event_create: any;
   event_name: string;
@@ -26,10 +26,10 @@ export class EventCreationComponent {
     public dialogRef: MatDialogRef<EventCreationComponent>) {
 
   }
-
+  /*
   onSubmit(form: NgForm) {
   }
-
+  */
   ngOnInit(): void {
   }
 
